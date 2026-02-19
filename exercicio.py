@@ -60,7 +60,7 @@ if name_user == name_login  and password == password_login :
     print("Login bem sucedido!")
 else:
     print("Credenciais inválidas. Tente novamente.")
-'''
+
 #Solicite ao usuário as coordenadas (x, y) de um ponto qualquer e utilize uma estrutura if elif else para determinar em qual quadrante do plano cartesiano o ponto se encontra de acordo com as seguintes condições:
 #Primeiro Quadrante: os valores de x e y devem ser maiores que zero;
 #Segundo Quadrante: o valor de x é menor que zero e o valor de y é maior que zero;
@@ -81,6 +81,32 @@ elif x > 0 and y < 0:
     print('O ponto está no quarto quadrante.')
 else:
     print('O ponto está localizado no eixo ou origem')
+'''
+'''
+# FOR
+
+numero = -1 (apenas um valor inicial inválido).
+for _ in range(3):  # Supondo um número máximo de tentativas (3) arbitrário
+    numero = int(input("Digite um número positivo: "))
+    if numero > 0:
+        break        #Se for positivo, o comando break "quebra" o loop imediatamente e pula para o final.
+
+print("Você digitou:", numero)
+
+
+'''
+
+'''
+# WHILE
+
+numero = -1
+while numero <= 0:
+    numero = int(input("Digite um número positivo: "))
+
+print("Você digitou:", numero)
+
+
+'''
 
 
 

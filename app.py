@@ -1,6 +1,6 @@
 import os
 
-restaurante = [] #lista
+restaurantes = ['Pizza','Sushi'] 
 
 def exibir_nome_programa():
     print('Sabor Express\n') #shift + seta para baixo -> multiplica | \n -> pula uma linha
@@ -12,22 +12,36 @@ def exibir_opcao_programa():
     print('4. Sair\n')
 
 def finalizar_app():
-    os.system('cls')
-    print('Finalizando o programa\n')
+    exibir_subtitulo('Finalizando o programa\n')
+
+def voltar_ao_menu():
+    input('\nDigite uma tecla para voltar ao menu principal ')
+    main()
 
 def  opcao_invalida():
     print('Opção inválida!\n')
-    input('Digite uma tecla para voltar ao menu principal')
-    main()
+    voltar_ao_menu()
+
+def exibir_subtitulo(texto):
+    os.system('cls')
+    print(texto)
+
+def listar_restaurante():
+    exibir_subtitulo('Listando os restaurantes\n')
+
+    for restaurante in restaurantes:                       #Para cada item (que chamarei de 'restaurante'/ variável temporária) dentro da lista 'restaurantes', faça o seguinte:
+        print(f'.{restaurante}')
+
+    voltar_ao_menu()
 
 def cadastrar_novo_restaurante():
-    os.system('cls')
-    print('Cadastro de novos restaurantes\n')
+    exibir_subtitulo('Cadastro de novos restaurantes\n')
+    
     nome_do_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
-    restaurante.append(nome_do_restaurante) # append -> cada nome do restaurante que foi digitado, é ADICIONADO(append) na lista restaurante
+    restaurantes.append(nome_do_restaurante) # append -> cada nome do restaurante que foi digitado, é ADICIONADO(append) na lista restaurante
     print(f'O restaurante {nome_do_restaurante} foi cadastrado com sucesso\n')
-    input('Digite uma tecla  para voltarao menu principal')
-    main()
+    voltar_ao_menu() 
+
 
 def escolher_opcao():
     try:                                                    #try - Tente: Você coloca dentro deste bloco o código que pode dar erro.
