@@ -43,6 +43,8 @@ Neste projeto, apliquei diversos conceitos de lógica de programação:
 | **Fluxo de Decisão** | Estruturas condicionais `if`, `elif` e `else`. |
 | **Tratamento de Erros** | Blocos `try` e `except` para evitar interrupções por inputs inválidos. |
 | **Ponto de Entrada** | Uso do `if __name__ == '__main__':` para garantir a execução correta. |
+| **Estrutura de Dados** | Uso de Listas `[]` para armazenamento de dados voláteis. |
+| **Manipulação de Listas** | Método `.append()` para adicionar novos elementos dinamicamente. |
 
 
 ## Anotação 📝
@@ -57,6 +59,9 @@ Neste projeto, apliquei diversos conceitos de lógica de programação:
 | int(input()) | Garante que o que o usuário digitou seja tratado como número (inteiro). |
 | match | Estrutura de seleção (semelhante ao switch/case) para múltiplas condições. |
 | try / except | Tenta executar um código e captura o erro caso algo dê errado, impedindo o crash do app. |
+| lista = [] | Declaração de uma lista vazia para armazenar múltiplos valores. Lista é mutável |
+| .append() | Adiciona um novo item ao final de uma lista existente. |
+| tuplas = () | Declaração de uma "lista" (tupla) vazia para armazenar múltiplos valores. Tupla é imutável (constante) |
 
 <h2 align="center">🤝 Contribuição</h2>
 <p align="center">Este é um projeto de estudos. Sinta-se à vontade para dar sugestões ou feedbacks!</p>
