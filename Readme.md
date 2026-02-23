@@ -13,10 +13,10 @@ Este projeto foi desenvolvido durante o curso de <b>Python: crie a sua primeira 
    O **Sabor Express** é uma aplicação de linha de comando que permite gerenciar uma lista de restaurantes. O sistema permite o cadastro, a categorização e o controle de status (ativo/inativo) de cada estabelecimento, simulando um sistema real de delivery.
 
 ## 🛠️ Novas Funcionalidades:
-- [x] **Cadastro de Restaurantes:** Registro de nome e categoria.
-- [x] **Listagem:** Exibição organizada de todos os restaurantes em formato de tabela.
-- [x] **Alternar Status:** Ativação ou desativação rápida de restaurantes cadastrados.
-- [x] **Tratamento de Erros:** Verificação para opções inválidas e restaurantes inexistentes.
+- [x] **Dicionários de Dados:** Cada restaurante agora possui `nome`, `categoria` e `status`.
+- [x] **Listagem Dinâmica:** Percorre a lista de dicionários e exibe as informações formatadas.
+- [x] **Refatoração:** Criação de funções auxiliares como `exibir_subtitulo` e `voltar_ao_menu` para melhor reutilização de código.
+- [x] **Interatividade:** O usuário pode cadastrar novos restaurantes que são salvos em tempo de execução.
 
 ## 🚀 Tecnologias Utilizadas
 * **Python 3.12**
@@ -36,6 +36,7 @@ Neste projeto, apliquei diversos conceitos de lógica de programação:
 
 | Categoria | O que foi usado |
 | :--- | :--- |
+| **Dicionários `{}`** | Armazenamento de dados no formato chave-valor (`key: value`). |
 | **Modularização** | Criação de funções com `def` para organizar o fluxo. |
 | **Bibliotecas** | `import os` para interagir com o sistema operacional. |
 | **Entrada de Dados** | `input()` com conversão de tipo `int()`. |
@@ -62,6 +63,10 @@ Neste projeto, apliquei diversos conceitos de lógica de programação:
 | lista = [] | Declaração de uma lista vazia para armazenar múltiplos valores. Lista é mutável |
 | .append() | Adiciona um novo item ao final de uma lista existente. |
 | tuplas = () | Declaração de uma "lista" (tupla) vazia para armazenar múltiplos valores. Tupla é imutável (constante) |
+| dicionario = {'chave': 'valor'} | Estrutura que mapeia chaves a valores específicos. |
+| restaurante['nome'] | Forma de acessar o valor de uma propriedade específica no dicionário. |
+| restaurantes.append(novo_dict) | Adiciona um dicionário inteiro como um novo item na lista. |
+| for r in lista: | Itera sobre a lista, onde cada `r` representa um dicionário completo. |
 
 <h2 align="center">🤝 Contribuição</h2>
 <p align="center">Este é um projeto de estudos. Sinta-se à vontade para dar sugestões ou feedbacks!</p>

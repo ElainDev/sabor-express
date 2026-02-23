@@ -1,6 +1,9 @@
 import os
 
-restaurantes = ['Pizza','Sushi'] 
+restaurantes = [{'nome':'Pizzaria Maluca', 'categoria': 'Italiano', 'ativo':False},
+                {'nome':'Praça', 'categoria': 'Japonesa', 'ativo':True},
+                {'nome':'Cantina da Dona Maria', 'categoria': 'Doce', 'ativo':False}
+                ] 
 
 def exibir_nome_programa():
     print('Sabor Express\n') #shift + seta para baixo -> multiplica | \n -> pula uma linha
@@ -29,16 +32,20 @@ def exibir_subtitulo(texto):
 def listar_restaurante():
     exibir_subtitulo('Listando os restaurantes\n')
 
-    for restaurante in restaurantes:                       #Para cada item (que chamarei de 'restaurante'/ variável temporária) dentro da lista 'restaurantes', faça o seguinte:
-        print(f'.{restaurante}')
+    for restaurante in restaurantes:                       # Para cada item (que chamarei de 'restaurante'/ variável temporária) dentro da lista 'restaurantes', faça o seguinte:
+        nome_restaurante = restaurante['nome']             # Criando a nova variável dentro da função, que só acessa aquele especifico no dicionário, o nome 
+        categoria = restaurante['categoria']
+        ativo = restaurante['ativo']
+        print(f'.{nome_restaurante} | {categoria} | {ativo}')
 
     voltar_ao_menu()
 
 def cadastrar_novo_restaurante():
     exibir_subtitulo('Cadastro de novos restaurantes\n')
-    
     nome_do_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
-    restaurantes.append(nome_do_restaurante) # append -> cada nome do restaurante que foi digitado, é ADICIONADO(append) na lista restaurante
+    categoria = input(f'Digite o nome da categoria  do restaurante {nome_do_restaurante}: ')
+    dados_dos_restaurante = {'nome': nome_do_restaurante, 'categoria':categoria, 'ativo': False}
+    restaurantes.append(dados_dos_restaurante)  # append -> cada nome do restaurante que foi digitado, é ADICIONADO(append) na lista restaurante
     print(f'O restaurante {nome_do_restaurante} foi cadastrado com sucesso\n')
     voltar_ao_menu() 
 
