@@ -4,23 +4,24 @@
 Este projeto foi desenvolvido durante o curso de <b>Python: crie a sua primeira aplicação</b> da Alura.
 </p>
 
-<div align="center"> <img src="assets/Estudando.png" width="100px" alt="Status" style="vertical-align: middle;"> <strong style="font-size: 18px;">Status: Estudando e codando 🚀</strong> </div>
+<div align="center"> <img src="assets/Finalizado.png" width="100px" alt="Status" style="vertical-align: middle;"> <strong style="font-size: 18px;">Status: Finalizado ✅🚀</strong> </div>
 
 <br>
 
 
 ## 📝 Sobre o Projeto
-   O **Sabor Express** é uma aplicação de linha de comando que permite gerenciar uma lista de restaurantes. O sistema permite o cadastro, a categorização e o controle de status (ativo/inativo) de cada estabelecimento, simulando um sistema real de delivery.
+   O **Sabor Express** é um sistema de gerenciamento de restaurantes via terminal. Ele permite registrar estabelecimentos, categorizá-los e gerenciar sua disponibilidade no sistema (Ativo/Desativado), utilizando uma interface organizada e intuitiva no console.
 
 ## 🛠️ Novas Funcionalidades:
-- [x] **Dicionários de Dados:** Cada restaurante agora possui `nome`, `categoria` e `status`.
-- [x] **Listagem Dinâmica:** Percorre a lista de dicionários e exibe as informações formatadas.
-- [x] **Refatoração:** Criação de funções auxiliares como `exibir_subtitulo` e `voltar_ao_menu` para melhor reutilização de código.
-- [x] **Interatividade:** O usuário pode cadastrar novos restaurantes que são salvos em tempo de execução.
+- [x] **Cadastro de Restaurantes:** Registro de nome e categoria salvos em dicionários.
+- [x] **Listagem Formatada:** Exibição elegante utilizando alinhamento de texto (`ljust`).
+- [x] **Alternar Estado:** Lógica inteligente para ativar/desativar restaurantes com verificação de existência.
+- [x] **Interface Dinâmica:** Subtítulos estilizados com bordas dinâmicas e limpeza de tela.
+- [x] **Robustez:** Tratamento de erros para entradas inválidas do usuário.
 
 ## 🚀 Tecnologias Utilizadas
 * **Python 3.12**
-* **Biblioteca `os`**: Para limpeza do console e melhor experiência visual.
+* **Biblioteca `os`**: Para limpeza e manipulação do sistema de arquivos do terminal.
 
 ## 🛠️ Como rodar o projeto
 1. Tenha o Python instalado (versão 3 ou superior).
@@ -46,6 +47,10 @@ Neste projeto, apliquei diversos conceitos de lógica de programação:
 | **Ponto de Entrada** | Uso do `if __name__ == '__main__':` para garantir a execução correta. |
 | **Estrutura de Dados** | Uso de Listas `[]` para armazenamento de dados voláteis. |
 | **Manipulação de Listas** | Método `.append()` para adicionar novos elementos dinamicamente. |
+| **Lógica Booleana** | Inversão de estado usando o operador `not`. |
+| **Operadores Ternários** | Condicionais simplificadas para exibição de status e mensagens. |
+| **Refatoração** | Funções parametrizadas (ex: exibir_subtitulo) para evitar repetição de código. |
+| **UX no Terminal** |Uso de input() para pausar a execução e os.system('cls'). |
 
 
 ## Anotação 📝
@@ -67,6 +72,10 @@ Neste projeto, apliquei diversos conceitos de lógica de programação:
 | restaurante['nome'] | Forma de acessar o valor de uma propriedade específica no dicionário. |
 | restaurantes.append(novo_dict) | Adiciona um dicionário inteiro como um novo item na lista. |
 | for r in lista: | Itera sobre a lista, onde cada `r` representa um dicionário completo. |
+| .ljust(n) | Ajusta o texto à esquerda preenchendo com espaços até completar n caracteres. |
+| not valor | Inverte um valor booleano (True vira False e vice-versa). |
+| var = x if cond else y | Atribui um valor baseado em uma condição em apenas uma linha. |
+| len(texto) | Conta o número de caracteres para criar bordas dinâmicas proporcionais. |
 
 <h2 align="center">🤝 Contribuição</h2>
 <p align="center">Este é um projeto de estudos. Sinta-se à vontade para dar sugestões ou feedbacks!</p>

@@ -2,16 +2,15 @@ import os
 
 restaurantes = [{'nome':'Pizzaria Maluca', 'categoria': 'Italiano', 'ativo':False},
                 {'nome':'Praça', 'categoria': 'Japonesa', 'ativo':True},
-                {'nome':'Cantina da Dona Maria', 'categoria': 'Doce', 'ativo':False}
-                ] 
+                {'nome':'Cantina da Dona Maria', 'categoria': 'Doce', 'ativo':False} ] # Dicionário 
 
-def exibir_nome_programa():
-    print('Sabor Express\n') #shift + seta para baixo -> multiplica | \n -> pula uma linha
+def exibir_nome_programa(): #título
+    print('Sabor Express\n') # alt + shift + seta para baixo -> multiplica | \n -> pula uma linha
 
-def exibir_opcao_programa():
+def exibir_opcao_programa(): # "menu de opcao"
     print('1. Cadastrar restaurante')
     print('2. Listar restaurante')
-    print('3. Ativar restaurante')
+    print('3. Alternar o estado do restaurante')
     print('4. Sair\n')
 
 def finalizar_app():
@@ -27,18 +26,10 @@ def  opcao_invalida():
 
 def exibir_subtitulo(texto):
     os.system('cls')
+    linha = '*' * (len(texto))
+    print(linha)
     print(texto)
-
-def listar_restaurante():
-    exibir_subtitulo('Listando os restaurantes\n')
-
-    for restaurante in restaurantes:                       # Para cada item (que chamarei de 'restaurante'/ variável temporária) dentro da lista 'restaurantes', faça o seguinte:
-        nome_restaurante = restaurante['nome']             # Criando a nova variável dentro da função, que só acessa aquele especifico no dicionário, o nome 
-        categoria = restaurante['categoria']
-        ativo = restaurante['ativo']
-        print(f'.{nome_restaurante} | {categoria} | {ativo}')
-
-    voltar_ao_menu()
+    print(linha)
 
 def cadastrar_novo_restaurante():
     exibir_subtitulo('Cadastro de novos restaurantes\n')
@@ -48,6 +39,34 @@ def cadastrar_novo_restaurante():
     restaurantes.append(dados_dos_restaurante)  # append -> cada nome do restaurante que foi digitado, é ADICIONADO(append) na lista restaurante
     print(f'O restaurante {nome_do_restaurante} foi cadastrado com sucesso\n')
     voltar_ao_menu() 
+
+def listar_restaurante():
+    exibir_subtitulo('Listando os restaurantes\n')
+    print(f'{'nome_restaurante'.ljust(22)} | {'categoria'.ljust(22)} | {'Status'.ljust(22)}')
+
+    for restaurante in restaurantes:                       # Para cada item (que chamarei de 'restaurante'/ variável temporária) dentro da lista 'restaurantes', faça o seguinte:
+        nome_restaurante = restaurante['nome']             # Criando a nova variável dentro da função, que só acessa aquele especifico no dicionário, o nome 
+        categoria = restaurante['categoria']
+        ativo = 'ativo' if restaurante['ativo'] else 'desativado'
+        print(f'.{nome_restaurante.ljust(20)} | {categoria.ljust(20)} | {ativo}')
+
+    voltar_ao_menu()
+
+def ativar_restaurante(): # alterna o estado do restaurante 
+    exibir_subtitulo('Alternando o estado do restaurante')
+    nome_restaurante = input('Digite o nome do restaurante que deseja alterar o estado: ')
+    restaurante_encontrado = False #False, porque ainda não encontramos o restaurante
+
+    for restaurante in restaurantes:
+        if nome_restaurante == restaurante['nome']: #Se for iguais significa que o restaurante digitado foi encontrado 
+            restaurante_encontrado = True
+            restaurante['ativo'] = not restaurante['ativo'] # Se era False, vira True (Ativado). Se era True, vira False (Desativado)
+            mensagem = f'O restaurante {nome_restaurante} foi ativado com sucesso' if restaurante['ativo'] else f'O restaurante {nome_restaurante} foi desativado com sucesso'
+            print(mensagem)
+    if not restaurante_encontrado:
+        print('O restaurante não foi encontrado')
+
+    voltar_ao_menu()        
 
 
 def escolher_opcao():

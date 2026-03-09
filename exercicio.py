@@ -122,7 +122,7 @@ food = ['Pizza', 'Sushi', 'Macarrão', 'Pão']
 
 for foods in food:
     print(f'.{foods}')
-'''
+
 # Utilize um loop for para calcular a soma dos números ímpares de 1 a 10.
 soma_impares = 0
 
@@ -132,7 +132,66 @@ for i in range (3,5,9):
 print(soma_impares)
 
 # Solicite ao usuário um número e, em seguida, utilize um loop for para imprimir a tabuada desse número, indo de 1 a 10.
+numero = int(input('Digite um número: '))
+for i  in range(1, 11):
+    resultado = numero * i
+    print(f'{numero} x {i} = {resultado}')
 
 # Crie uma lista de números e utilize um loop for para calcular a soma de todos os elementos. Utilize um bloco try-except para lidar com possíveis exceções.
+list_number = [2, 5 , 9 , 2 , 1]
+soma_total = 0
+
+try:
+    for numero in list_number:
+        soma_total += numero  # O mesmo que: soma_total = soma_total + numero
+    
+    print(f"A soma de todos os elementos é: {soma_total}")
+
+except TypeError: #captura casos onde alguém pode ter colocado uma palavra (string) no meio da lista de números por engano.
+    print("Erro: A lista contém itens que não são números!")
+except Exception as e: #serve como uma rede de segurança para qualquer outro erro que não previmos.
+    print(f"Ocorreu um erro inesperado: {e}")
 
 # Construa um código que calcule a média dos valores em uma lista. Utilize um bloco try-except para lidar com a divisão por zero, caso a lista esteja vazia.
+soma_total2 = 0
+try:
+    for numero1  in list_number:
+       soma_total2 += numero1 # somamMediana = somamMediana + numero1
+        
+    media = soma_total2 / len(list_number) # len(list_number) nos dá a quantidade de itens na lista
+    
+    print(f'A média é {media}')
+
+except TypeError:
+    print("Erro: A lista está vazia, não é possível calcular a média de zero elementos.")
+except TypeError:
+    print("Erro: A lista contém valores que não são números.")
+'''
+#1 - Crie um dicionário representando informações sobre uma pessoa, como nome, idade e cidade.
+pessoa = [{'nome': 'Ana', 'idade': 24 , 'cidade':'Recife'}]
+
+#2 - Utilizando o dicionário criado no item 1:
+#Modifique o valor de um dos itens no dicionário (por exemplo, atualize a idade da pessoa);
+pessoa['idade'] = 31
+#Adicione um campo de profissão para essa pessoa;
+pessoa['Profissao'] = 'Engenharia'
+#Remova um item do dicionário.
+del pessoa['cidade']
+
+#3 - Crie um dicionário que relacione os números de 1 a 5 aos seus respectivos quadrados.
+numeros_quadrados = {x: x**2 for x in range(1, 6)}
+print(numeros_quadrados)
+#4 - Crie um dicionário e verifique se uma chave específica existe dentro desse dicionário.
+pessoa1 = {'nome': 'Amanda', 'idade': 19, 'cidade': 'São Luís'}
+if 'nome' in pessoa1:
+    print("A chave 'nome' existe no dicionário.")
+else:
+    print("A chave 'nome' não existe no dicionário.")
+#5 - Escreva um código que conte a frequência de cada palavra em uma frase utilizando um dicionário.
+
+frase = "Python se tornou uma das linguagens de programação mais populares do mundo nos últimos anos."
+contagem_palavras = {}
+palavras = frase.split()
+for palavra in palavras:
+    contagem_palavras[palavra] = contagem_palavras.get(palavra, 0) + 1
+print(contagem_palavras)
